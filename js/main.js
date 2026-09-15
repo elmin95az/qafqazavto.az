@@ -1,0 +1,177 @@
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ---------- Reveal hero glass-cards only once the hero photo is ready ---------- */
+  /* (backdrop-filter blurs whatever sits behind the card — if we show the card
+     before the image has loaded, it "pops" once the blur suddenly has real
+     content to blur. Waiting for the image avoids that visual glitch.) */
+  var heroImg = document.querySelector('.hero__illustration');
+  var heroCards = document.querySelectorAll('.hero__card');
+
+  function revealHeroCards() {
+    heroCards.forEach(function (card) { card.classList.add('is-loaded'); });
+  }
+
+  if (heroImg) {
+    if (heroImg.complete && heroImg.naturalWidth > 0) {
+      revealHeroCards();
+    } else {
+      heroImg.addEventListener('load', revealHeroCards);
+      heroImg.addEventListener('error', revealHeroCards);
+      setTimeout(revealHeroCards, 3000); // safety net so cards never stay hidden
+    }
+  } else {
+    revealHeroCards();
+  }
+
+  /* ---------- Mobile menu (slide-in drawer) ---------- */
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+  var navBackdrop = document.getElementById('nav-backdrop');
+  var navClose = document.getElementById('nav-close');
+
+  function openNav() {
+    if (!nav) return;
+    nav.classList.add('is-open');
+    if (navBackdrop) navBackdrop.classList.add('is-open');
+    document.body.classList.add('nav-open');
+  }
+  function closeNav() {
+    if (!nav) return;
+    nav.classList.remove('is-open');
+    if (navBackdrop) navBackdrop.classList.remove('is-open');
+    document.body.classList.remove('nav-open');
+  }
+
+  if (burger && nav) {
+    burger.addEventListener('click', function () {
+      if (nav.classList.contains('is-open')) { closeNav(); } else { openNav(); }
+    });
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeNav);
+    });
+  }
+  if (navClose) navClose.addEventListener('click', closeNav);
+  if (navBackdrop) navBackdrop.addEventListener('click', closeNav);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+
+  /* ---------- Active nav link on scroll ---------- */
+  var sections = Array.from(document.querySelectorAll('main section[id], .hero[id]'));
+  var navLinks = nav ? Array.from(nav.querySelectorAll('a')) : [];
+
+  function setActiveLink() {
+    var scrollPos = window.scrollY + 140;
+    var current = sections[0];
+    sections.forEach(function (section) {
+      if (section.offsetTop <= scrollPos) current = section;
+    });
+    navLinks.forEach(function (link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current.id);
+    });
+  }
+  if (sections.length && navLinks.length) {
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+  }
+
+  /* ---------- Animated stat counters ---------- */
+  var statEls = document.querySelectorAll('.stat__num');
+  var statsAnimated = false;
+
+  function animateStats() {
+    if (statsAnimated) return;
+    var heroStats = document.querySelector('.hero__stats');
+    if (!heroStats) return;
+    var rect = heroStats.getBoundingClientRect();
+    if (rect.top > window.innerHeight) return;
+
+    statsAnimated = true;
+    statEls.forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      var duration = 1200;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var localeMap = { ru: 'ru-RU', az: 'az-Latn-AZ', en: 'en-US' };
+        var locale = (window.QA_I18N && localeMap[window.QA_I18N.lang]) || 'ru-RU';
+        el.textContent = Math.floor(eased * target).toLocaleString(locale);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target.toLocaleString(locale);
+        }
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  window.addEventListener('scroll', animateStats);
+  animateStats();
+
+  /* ---------- Scroll-to-top button ---------- */
+  var scrollTopBtn = document.getElementById('scroll-top');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', function () {
+      scrollTopBtn.classList.toggle('is-visible', window.scrollY > 500);
+    });
+  }
+
+  /* ---------- Sticky header shadow ---------- */
+  var header = document.getElementById('header');
+  if (header) {
+    window.addEventListener('scroll', function () {
+      header.style.boxShadow = window.scrollY > 10 ? '0 8px 24px rgba(18,58,107,.08)' : 'none';
+    });
+  }
+
+  /* ---------- Booking form (demo submit handler) ---------- */
+  var form = document.getElementById('booking-form');
+  var note = document.getElementById('booking-note');
+
+  if (form && note) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = form.querySelector('[name="name"]').value.trim();
+      var i18n = window.QA_I18N;
+      note.textContent = i18n
+        ? (name ? i18n.t('booking.thanks', { name: name }) : i18n.t('booking.thanksNoName'))
+        : 'Спасибо' + (name ? ', ' + name : '') + '! Заявка отправлена, мы свяжемся с вами в ближайшее время.';
+      note.style.color = 'var(--primary)';
+      form.reset();
+
+      // NOTE: this is a front-end demo only — connect a real backend
+      // (email service, CRM webhook, etc.) to actually receive submissions.
+    });
+  }
+
+  /* ---------- Footer year ---------- */
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------- Scroll-reveal animations ---------- */
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  if (revealEls.length) {
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      revealEls.forEach(function (el, i) {
+        el.style.transitionDelay = (i % 3) * 80 + 'ms';
+        observer.observe(el);
+      });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  }
+
+});
