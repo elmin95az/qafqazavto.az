@@ -68,6 +68,8 @@ var QA_TRANSLATIONS = {
     'featureList.3.desc': 'Отчитываемся о статусе сделки, отправляем фото и отслеживание доставки.',
     'featureList.4.title': 'Помощь с растаможкой',
     'featureList.4.desc': 'Сопровождаем оформление до момента получения авто на руки.',
+    'featureList.5.title': 'Химчистка и брендированная рамка в подарок',
+    'featureList.5.desc': 'При выдаче автомобиля в Баку — бесплатная химчистка салона и фирменная рамка номерного знака Qafqaz Avto.',
 
     'pricing.eyebrow': 'Тарифы',
     'pricing.title': 'Выберите формат сопровождения сделки',
@@ -202,6 +204,8 @@ var QA_TRANSLATIONS = {
     'featureList.3.desc': 'Əməliyyatın statusu haqqında hesabat veririk, foto və çatdırılma izləməsini göndəririk.',
     'featureList.4.title': 'Gömrükdə dəstək',
     'featureList.4.desc': 'Avtomobili əlinizə alana qədər rəsmiləşdirmədə müşayiət edirik.',
+    'featureList.5.title': 'Hədiyyə olaraq quru təmizləmə və brendli nömrə çərçivəsi',
+    'featureList.5.desc': 'Avtomobili Bakıda təhvil alarkən — salonun pulsuz quru təmizlənməsi və Qafqaz Avto brendli nömrə çərçivəsi.',
 
     'pricing.eyebrow': 'Tariflər',
     'pricing.title': 'Əməliyyat müşayiəti formatını seçin',
@@ -336,6 +340,8 @@ var QA_TRANSLATIONS = {
     'featureList.3.desc': 'We report on deal status and send photos and shipment tracking.',
     'featureList.4.title': 'Customs support',
     'featureList.4.desc': 'We support you through clearance until the car is in your hands.',
+    'featureList.5.title': 'Free detailing & a branded license plate frame',
+    'featureList.5.desc': "When you pick up your car in Baku — a free interior detailing and a Qafqaz Avto branded license plate frame.",
 
     'pricing.eyebrow': 'Pricing',
     'pricing.title': 'Choose your level of support',
