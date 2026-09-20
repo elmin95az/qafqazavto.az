@@ -28,7 +28,6 @@
       </button>
       <a href="#home" class="active" data-i18n="nav.home">Главная</a>
       <a href="#how" data-i18n="nav.how">Как это работает</a>
-      <a href="#services" data-i18n="nav.services">Услуги</a>
       <a href="#reviews" data-i18n="nav.reviews">Отзывы</a>
       <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
     </nav>
@@ -118,110 +117,50 @@
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="section__head" data-reveal>
-        <span class="eyebrow" data-i18n="services.eyebrow">Наши услуги</span>
-        <h2 data-i18n="services.title">Полное сопровождение сделки от подбора до выдачи</h2>
-        <p data-i18n="services.desc">Работаем как с готовым лотом, так и с индивидуальным подбором под ваш бюджет и требования.</p>
-      </div>
-
-      <div class="services__grid">
-        <article class="service-card" data-reveal>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-          <h3 data-i18n="serviceList.1.title">Подбор автомобиля</h3>
-          <p data-i18n="serviceList.1.desc">Находим подходящие лоты на аукционах США под ваш бюджет, марку и требования к состоянию.</p>
-          <a href="#booking" class="service-card__link"><span data-i18n="common.apply">Оставить заявку</span> →</a>
-        </article>
-
-        <article class="service-card" data-reveal>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M14.5 3.5 20.5 9.5"/><path d="M12.9 5.1 16.9 9.1a1.5 1.5 0 0 1 0 2.1l-.7.7a1.5 1.5 0 0 1-2.1 0l-4-4a1.5 1.5 0 0 1 0-2.1l.7-.7a1.5 1.5 0 0 1 2.1 0z"/><path d="M9 12 3 18"/><path d="M3 21h7"/></svg>
-          </div>
-          <h3 data-i18n="serviceList.2.title">Участие в торгах и выкуп</h3>
-          <p data-i18n="serviceList.2.desc">Делаем ставки от вашего имени, контролируем лимит бюджета, выкупаем выигранный лот.</p>
-          <a href="#booking" class="service-card__link"><span data-i18n="common.apply">Оставить заявку</span> →</a>
-        </article>
-
-        <article class="service-card" data-reveal>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6z"/><path d="M9 12.5l2 2 4-4.5"/></svg>
-          </div>
-          <h3 data-i18n="serviceList.3.title">Проверка истории и VIN</h3>
-          <p data-i18n="serviceList.3.desc">Отчёт по истории автомобиля, оценка повреждений по фото и данным площадки перед покупкой. Каждому клиенту — 5 бесплатных отчётов Carfax.</p>
-          <a href="#booking" class="service-card__link"><span data-i18n="common.apply">Оставить заявку</span> →</a>
-        </article>
-
-        <article class="service-card" data-reveal>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v4h4"/><line x1="8.5" y1="12" x2="15.5" y2="12"/><line x1="8.5" y1="15.5" x2="15.5" y2="15.5"/><line x1="8.5" y1="9" x2="11" y2="9"/></svg>
-          </div>
-          <h3 data-i18n="serviceList.4.title">Оформление документов</h3>
-          <p data-i18n="serviceList.4.desc">Готовим титул, экспортные документы и полный пакет бумаг, необходимый для ввоза в Азербайджан.</p>
-          <a href="#booking" class="service-card__link"><span data-i18n="common.apply">Оставить заявку</span> →</a>
-        </article>
-
-        <article class="service-card" data-reveal>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="21"/><path d="M5 12H2a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-3"/></svg>
-          </div>
-          <h3 data-i18n="serviceList.5.title">Морская и контейнерная доставка</h3>
-          <p data-i18n="serviceList.5.desc">Транспортировка до порта, погрузка на судно, доставка через порты Грузии в Азербайджан.</p>
-          <a href="#booking" class="service-card__link"><span data-i18n="common.apply">Оставить заявку</span> →</a>
-        </article>
-
-        <article class="service-card" data-reveal>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.2 1.4 2.6-.3 1 2.4 2.4 1-.3 2.6L21 12l-1.4 2.2.3 2.6-2.4 1-1 2.4-2.6-.3L12 21l-2.2-1.4-2.6.3-1-2.4-2.4-1 .3-2.6L3 12l1.4-2.2-.3-2.6 2.4-1 1-2.4 2.6.3z"/><path d="M9 12l2 2 4-4.5"/></svg>
-          </div>
-          <h3 data-i18n="serviceList.6.title">Растаможка и учёт</h3>
-          <p data-i18n="serviceList.6.desc">Сопровождение таможенного оформления и постановки автомобиля на учёт в Азербайджане.</p>
-          <a href="#booking" class="service-card__link"><span data-i18n="common.apply">Оставить заявку</span> →</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== HOW IT WORKS ===== -->
   <section class="section process" id="how">
     <div class="container">
       <div class="section__head" data-reveal>
         <span class="eyebrow" data-i18n="process.eyebrow">Как это работает</span>
-        <h2 data-i18n="process.title">От заявки до получения автомобиля в Баку</h2>
+        <h2 data-i18n="process.title">Полное сопровождение сделки — от заявки до выдачи автомобиля в Баку</h2>
+        <p data-i18n="process.desc">Работаем как с готовым лотом, так и с индивидуальным подбором под ваш бюджет и требования.</p>
       </div>
 
-      <div class="process__grid process__grid--six">
+      <div class="process__grid">
         <div class="process-step" data-reveal>
           <span class="process-step__num">01</span>
           <h3 data-i18n="processList.1.title">Заявка</h3>
-          <p data-i18n="processList.1.desc">Рассказываете, какой автомобиль ищете, и какой у вас бюджет.</p>
+          <p data-i18n="processList.1.desc">Рассказываете, какой автомобиль ищете и какой у вас бюджет — уточняем детали и приступаем к подбору.</p>
         </div>
         <div class="process-step" data-reveal>
           <span class="process-step__num">02</span>
           <h3 data-i18n="processList.2.title">Подбор лотов</h3>
-          <p data-i18n="processList.2.desc">Присылаем подходящие варианты с аукционов с фото и отчётом.</p>
+          <p data-i18n="processList.2.desc">Находим подходящие лоты на аукционах США под ваш бюджет, марку и требования к состоянию, присылаем варианты с фото и отчётом.</p>
         </div>
         <div class="process-step" data-reveal>
           <span class="process-step__num">03</span>
-          <h3 data-i18n="processList.3.title">Торги и выкуп</h3>
-          <p data-i18n="processList.3.desc">Участвуем в аукционе, выигрываем лот в пределах согласованного лимита.</p>
+          <h3 data-i18n="processList.3.title">Проверка истории и VIN</h3>
+          <p data-i18n="processList.3.desc">Отчёт по истории автомобиля, оценка повреждений по фото и данным площадки перед покупкой. Каждому клиенту — 5 бесплатных отчётов Carfax.</p>
         </div>
         <div class="process-step" data-reveal>
           <span class="process-step__num">04</span>
-          <h3 data-i18n="processList.4.title">Документы</h3>
-          <p data-i18n="processList.4.desc">Оформляем титул и экспортные документы на автомобиль.</p>
+          <h3 data-i18n="processList.4.title">Торги и выкуп</h3>
+          <p data-i18n="processList.4.desc">Делаем ставки от вашего имени, контролируем лимит бюджета — выкупаем лот в пределах согласованного лимита.</p>
         </div>
         <div class="process-step" data-reveal>
           <span class="process-step__num">05</span>
-          <h3 data-i18n="processList.5.title">Морская доставка</h3>
-          <p data-i18n="processList.5.desc">Отгружаем авто и отслеживаем маршрут до порта назначения.</p>
+          <h3 data-i18n="processList.5.title">Документы</h3>
+          <p data-i18n="processList.5.desc">Готовим титул, экспортные документы и полный пакет бумаг, необходимый для ввоза в Азербайджан.</p>
         </div>
         <div class="process-step" data-reveal>
           <span class="process-step__num">06</span>
-          <h3 data-i18n="processList.6.title">Выдача в Баку</h3>
-          <p data-i18n="processList.6.desc">Растаможиваем и передаём автомобиль вам с полным пакетом документов.</p>
+          <h3 data-i18n="processList.6.title">Морская доставка</h3>
+          <p data-i18n="processList.6.desc">Транспортировка до порта, погрузка на судно, доставка через порты Грузии в Азербайджан — отслеживаем маршрут на всех этапах.</p>
+        </div>
+        <div class="process-step" data-reveal>
+          <span class="process-step__num">07</span>
+          <h3 data-i18n="processList.7.title">Растаможка и выдача в Баку</h3>
+          <p data-i18n="processList.7.desc">Сопровождаем таможенное оформление и постановку на учёт, передаём вам автомобиль с полным пакетом документов.</p>
         </div>
       </div>
     </div>
@@ -408,18 +347,17 @@
       <h4 data-i18n="footer.navTitle">Навигация</h4>
       <a href="#home" data-i18n="nav.home">Главная</a>
       <a href="#how" data-i18n="nav.how">Как это работает</a>
-      <a href="#services" data-i18n="nav.services">Услуги</a>
       <a href="#reviews" data-i18n="nav.reviews">Отзывы</a>
       <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
     </div>
 
     <div class="footer__col">
       <h4 data-i18n="footer.servicesTitle">Услуги</h4>
-      <a href="#services" data-i18n="footer.service1">Подбор автомобиля</a>
-      <a href="#services" data-i18n="footer.service2">Участие в торгах</a>
-      <a href="#services" data-i18n="footer.service3">Проверка VIN</a>
-      <a href="#services" data-i18n="footer.service4">Морская доставка</a>
-      <a href="#services" data-i18n="footer.service5">Растаможка</a>
+      <a href="#how" data-i18n="footer.service1">Подбор автомобиля</a>
+      <a href="#how" data-i18n="footer.service2">Участие в торгах</a>
+      <a href="#how" data-i18n="footer.service3">Проверка VIN</a>
+      <a href="#how" data-i18n="footer.service4">Морская доставка</a>
+      <a href="#how" data-i18n="footer.service5">Растаможка</a>
     </div>
 
     <div class="footer__col">
