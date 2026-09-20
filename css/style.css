@@ -112,7 +112,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 800; line-height: 1.15; letter-spacing:
 .lang-overlay__list { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .lang-overlay__option {
   background: none; border: none; cursor: pointer; font-family: inherit;
-  color: rgba(255,255,255,.5); padding: 16px 44px;
+  color: rgba(255,255,255,.5); padding: 16px 44px; text-decoration: none;
   display: flex; align-items: baseline; justify-content: center; gap: 20px;
   transition: color .25s ease, transform .25s ease;
 }

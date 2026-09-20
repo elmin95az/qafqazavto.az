@@ -1,0 +1,9 @@
+# Serve the single-page app for language-prefixed URLs (e.g. /ru, /az, /en)
+# instead of a 404 — the language itself is picked up client-side from the
+# URL by js/i18n.js.
+/ru   /index.html   200
+/ru/  /index.html   200
+/az   /index.html   200
+/az/  /index.html   200
+/en   /index.html   200
+/en/  /index.html   200

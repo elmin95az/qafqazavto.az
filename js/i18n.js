@@ -465,10 +465,28 @@ var QA_TRANSLATIONS = {
     return QA_TRANSLATIONS[lang] || QA_TRANSLATIONS[DEFAULT_LANG];
   }
 
-  function applyLanguage(lang) {
+  function langFromPath(pathname) {
+    var seg = (pathname || '').split('/')[1];
+    return QA_TRANSLATIONS[seg] ? seg : null;
+  }
+
+  function applyLanguage(lang, opts) {
     if (!QA_TRANSLATIONS[lang]) lang = DEFAULT_LANG;
     var dict = getDict(lang);
     currentLang = lang;
+
+    var updateUrl = !opts || opts.updateUrl !== false;
+    if (updateUrl && window.history && window.history.pushState) {
+      var path = '/' + lang;
+      if (window.location.pathname !== path) {
+        var newUrl = path + window.location.search + window.location.hash;
+        if (opts && opts.replace) {
+          window.history.replaceState({ lang: lang }, '', newUrl);
+        } else {
+          window.history.pushState({ lang: lang }, '', newUrl);
+        }
+      }
+    }
 
     document.documentElement.setAttribute('lang', lang);
 
@@ -530,13 +548,22 @@ var QA_TRANSLATIONS = {
   }
 
   function detectInitialLang() {
+    var fromPath = langFromPath(window.location.pathname);
+    if (fromPath) return fromPath;
+
     var saved;
     try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) { /* ignore */ }
     if (saved && QA_TRANSLATIONS[saved]) return saved;
     return DEFAULT_LANG;
   }
 
-  applyLanguage(detectInitialLang());
+  // On the very first load, sync the URL to match the resolved language
+  // without adding a history entry (replace, not push).
+  applyLanguage(detectInitialLang(), { replace: true });
+
+  window.addEventListener('popstate', function () {
+    applyLanguage(langFromPath(window.location.pathname) || DEFAULT_LANG, { updateUrl: false });
+  });
 
   /* ---------- Full-screen language overlay ---------- */
   var overlay = document.getElementById('lang-overlay');
@@ -563,7 +590,8 @@ var QA_TRANSLATIONS = {
       if (e.target === overlay) closeOverlay();
     });
     overlay.querySelectorAll('.lang-overlay__option').forEach(function (btn) {
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
         applyLanguage(btn.getAttribute('data-lang'));
         closeOverlay();
       });
