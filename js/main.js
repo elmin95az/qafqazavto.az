@@ -1,7 +1,6 @@
-// TODO: replace with your deployed Cloudflare Worker URL (see worker/README
-// or SETUP-TELEGRAM.md) once it's live, e.g.
-// 'https://qafqaz-avto-booking.<your-subdomain>.workers.dev'
-var BOOKING_ENDPOINT = 'https://qafqaz-avto-booking.YOUR-SUBDOMAIN.workers.dev';
+// Cloudflare Worker that forwards booking-form submissions to the
+// Telegram group (see SETUP-TELEGRAM.md for how it's deployed/configured).
+var BOOKING_ENDPOINT = 'https://qafqaz-avto-booking.elmin95-az.workers.dev';
 
 document.addEventListener('DOMContentLoaded', function () {
 
