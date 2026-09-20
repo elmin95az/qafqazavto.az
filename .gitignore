@@ -8,3 +8,13 @@ Thumbs.db
 # Node dependencies
 node_modules/
 worker/.wrangler/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+
+# Cloudflare Pages deploy staging folder (regenerated from the site files)
+.deploy-pages/
