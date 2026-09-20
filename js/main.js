@@ -1,3 +1,8 @@
+// TODO: replace with your deployed Cloudflare Worker URL (see worker/README
+// or SETUP-TELEGRAM.md) once it's live, e.g.
+// 'https://qafqaz-avto-booking.<your-subdomain>.workers.dev'
+var BOOKING_ENDPOINT = 'https://qafqaz-avto-booking.YOUR-SUBDOMAIN.workers.dev';
+
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- Reveal hero glass-cards only once the hero photo is ready ---------- */
@@ -128,23 +133,66 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ---------- Booking form (demo submit handler) ---------- */
+  /* ---------- Booking form → Telegram group (via Cloudflare Worker proxy) ---------- */
   var form = document.getElementById('booking-form');
   var note = document.getElementById('booking-note');
 
   if (form && note) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var name = form.querySelector('[name="name"]').value.trim();
       var i18n = window.QA_I18N;
-      note.textContent = i18n
-        ? (name ? i18n.t('booking.thanks', { name: name }) : i18n.t('booking.thanksNoName'))
-        : 'Спасибо' + (name ? ', ' + name : '') + '! Заявка отправлена, мы свяжемся с вами в ближайшее время.';
-      note.style.color = 'var(--primary)';
-      form.reset();
+      var name = form.querySelector('[name="name"]').value.trim();
+      var submitBtn = form.querySelector('button[type="submit"]');
 
-      // NOTE: this is a front-end demo only — connect a real backend
-      // (email service, CRM webhook, etc.) to actually receive submissions.
+      var payload = {
+        name: name,
+        phone: form.querySelector('[name="phone"]').value.trim(),
+        model: form.querySelector('[name="model"]').value.trim(),
+        budget: form.querySelector('[name="budget"]').value.trim(),
+        message: form.querySelector('[name="message"]').value.trim(),
+      };
+
+      function showThanks() {
+        note.textContent = i18n
+          ? (name ? i18n.t('booking.thanks', { name: name }) : i18n.t('booking.thanksNoName'))
+          : 'Спасибо' + (name ? ', ' + name : '') + '! Заявка отправлена, мы свяжемся с вами в ближайшее время.';
+        note.style.color = 'var(--primary)';
+        form.reset();
+      }
+
+      function showError() {
+        note.textContent = i18n
+          ? i18n.t('booking.error')
+          : 'Не удалось отправить заявку. Позвоните нам или напишите в WhatsApp.';
+        note.style.color = '#c0392b';
+      }
+
+      if (!BOOKING_ENDPOINT || BOOKING_ENDPOINT.indexOf('YOUR-SUBDOMAIN') !== -1) {
+        // Worker not deployed/configured yet — fall back to a local-only
+        // confirmation so the form still feels functional during design review.
+        showThanks();
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+
+      fetch(BOOKING_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+        .then(function (result) {
+          if (result.ok && result.data && result.data.ok) {
+            showThanks();
+          } else {
+            showError();
+          }
+        })
+        .catch(showError)
+        .finally(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
     });
   }
 

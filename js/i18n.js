@@ -128,6 +128,7 @@ var QA_TRANSLATIONS = {
     'booking.formTitle': 'Заявка на подбор авто',
     'booking.thanks': 'Спасибо, {name}! Заявка отправлена, мы свяжемся с вами в ближайшее время.',
     'booking.thanksNoName': 'Спасибо! Заявка отправлена, мы свяжемся с вами в ближайшее время.',
+    'booking.error': 'Не удалось отправить заявку. Позвоните нам или напишите в WhatsApp.',
 
     'form.name': 'Ваше имя',
     'form.namePh': 'Введите имя',
@@ -277,6 +278,7 @@ var QA_TRANSLATIONS = {
     'booking.formTitle': 'Avtomobil seçimi üçün müraciət',
     'booking.thanks': 'Təşəkkürlər, {name}! Müraciətiniz göndərildi, tezliklə sizinlə əlaqə saxlayacağıq.',
     'booking.thanksNoName': 'Təşəkkürlər! Müraciətiniz göndərildi, tezliklə sizinlə əlaqə saxlayacağıq.',
+    'booking.error': 'Müraciəti göndərmək alınmadı. Bizə zəng edin və ya WhatsApp-a yazın.',
 
     'form.name': 'Adınız',
     'form.namePh': 'Adınızı daxil edin',
@@ -426,6 +428,7 @@ var QA_TRANSLATIONS = {
     'booking.formTitle': 'Car sourcing request',
     'booking.thanks': "Thank you, {name}! Your request has been sent — we'll be in touch shortly.",
     'booking.thanksNoName': "Thank you! Your request has been sent — we'll be in touch shortly.",
+    'booking.error': "Couldn't send your request. Please call us or write on WhatsApp.",
 
     'form.name': 'Your name',
     'form.namePh': 'Enter your name',
