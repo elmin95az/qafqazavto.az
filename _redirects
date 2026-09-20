@@ -1,9 +1,12 @@
 # Serve the single-page app for language-prefixed URLs (e.g. /ru, /az, /en)
 # instead of a 404 — the language itself is picked up client-side from the
 # URL by js/i18n.js.
-/ru   /index.html   200
-/ru/  /index.html   200
-/az   /index.html   200
-/az/  /index.html   200
-/en   /index.html   200
-/en/  /index.html   200
+# (Destination is "/", not "/index.html" — Cloudflare Pages auto-redirects
+# any request whose target resolves to /index.html back to "/", which was
+# overriding this rewrite with an unwanted 308.)
+/ru   /   200
+/ru/  /   200
+/az   /   200
+/az/  /   200
+/en   /   200
+/en/  /   200
