@@ -132,11 +132,19 @@ body.lang-overlay-open { overflow: hidden; }
 /* ---------- Header ---------- */
 .header {
   position: sticky; top: 0; z-index: 100;
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow .25s ease;
+}
+/* The blur lives on a pseudo-element rather than directly on .header —
+   backdrop-filter on an element makes IT the containing block for any
+   position:fixed descendants, which would hijack the mobile nav
+   drawer's (a real child of .header) positioning. A ::before has no
+   children of its own, so it can't cause that problem. */
+.header::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
   background: rgba(255,255,255,.75);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-  transition: box-shadow .25s ease;
 }
 .header__inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; gap: 24px; }
 
