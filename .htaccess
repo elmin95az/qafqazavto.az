@@ -1,0 +1,10 @@
+<IfModule LiteSpeed>
+CacheDisable public /
+CacheLookup off
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm|js|css)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

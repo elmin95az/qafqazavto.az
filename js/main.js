@@ -27,6 +27,29 @@ document.addEventListener('DOMContentLoaded', function () {
     revealHeroCards();
   }
 
+  /* ---------- In-page anchor links ---------- */
+  /* Scroll to the target ourselves instead of letting the browser follow
+     the "#" href natively: for file:// documents, a plain hash navigation
+     triggers a full page reload (confirmed in Chrome), which re-runs
+     i18n.js's language detection and silently resets the site back to the
+     default language on every menu click. Intercepting keeps it a same-page
+     scroll everywhere, file:// included. */
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!link) return;
+    var hash = link.getAttribute('href');
+    var target = hash === '#' ? null : document.querySelector(hash);
+    e.preventDefault();
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    try {
+      history.pushState(null, '', hash === '#' ? location.pathname + location.search : hash);
+    } catch (err) { /* pushState is blocked on file:// and some sandboxed origins */ }
+  });
+
   /* ---------- Mobile menu (slide-in drawer) ---------- */
   var burger = document.getElementById('burger');
   var nav = document.getElementById('nav');

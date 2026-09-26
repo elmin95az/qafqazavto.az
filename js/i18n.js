@@ -29,8 +29,8 @@ var QA_TRANSLATIONS = {
     'hero.stat1': 'лет на рынке',
     'hero.stat2': 'доставленных авто',
     'hero.stat3': 'выигранных ставок',
-    'hero.cardTop.title': 'Онлайн-трансляция торгов',
-    'hero.cardTop.desc': 'Следите за аукционом сами',
+    'hero.cardTop.title': 'Страхование логистики',
+    'hero.cardTop.desc': 'Покрытие от аукциона до Баку',
     'hero.cardBottom.title': '5 бесплатных отчётов Carfax',
     'hero.cardBottom.desc': 'Каждому клиенту — в подарок',
 
@@ -57,19 +57,14 @@ var QA_TRANSLATIONS = {
     'about.eyebrow': 'О компании',
     'about.title': 'Почему клиенты выбирают Qafqaz Avto',
     'about.desc': 'Мы напрямую работаем с крупнейшими аукционами США и лично сопровождаем каждую сделку — от выбора лота до постановки автомобиля на учёт в Азербайджане.',
-    'about.badge': 'лет опыта в закупке и доставке авто из США',
     'about.cta': 'Узнать больше',
 
-    'featureList.1.title': 'Прямой доступ к аукционам',
-    'featureList.1.desc': 'Работаем без посредников через собственные аккаунты на Copart и IAAI.',
-    'featureList.2.title': 'Прозрачная комиссия',
-    'featureList.2.desc': 'Стоимость услуг фиксируется заранее, без скрытых доплат.',
-    'featureList.3.title': 'Контроль на каждом этапе',
-    'featureList.3.desc': 'Отчитываемся о статусе сделки, отправляем фото и отслеживание доставки.',
-    'featureList.4.title': 'Помощь с растаможкой',
-    'featureList.4.desc': 'Сопровождаем оформление до момента получения авто на руки.',
-    'featureList.5.title': 'Химчистка и брендированная рамка в подарок',
-    'featureList.5.desc': 'При выдаче автомобиля в Баку — бесплатная химчистка салона и фирменная рамка номерного знака Qafqaz Avto.',
+    'featureList.1.title': 'Профессиональная экспертная поддержка в выборе автомобиля',
+    'featureList.2.title': 'Проверка документов выбранного авто перед покупкой',
+    'featureList.3.title': '5 бесплатных отчётов Carfax каждому клиенту',
+    'featureList.4.title': 'Полностью застрахованная перевозка от аукциона до Баку',
+    'featureList.5.title': 'БЕСПЛАТНАЯ химчистка от нашего партнёра',
+    'featureList.6.title': 'Брендированные фирменные рамки номерного знака',
 
     'pricing.eyebrow': 'Тарифы',
     'pricing.title': 'Выберите формат сопровождения сделки',
@@ -165,8 +160,8 @@ var QA_TRANSLATIONS = {
     'hero.stat1': 'il bazar təcrübəsi',
     'hero.stat2': 'çatdırılmış avtomobil',
     'hero.stat3': 'uğurlu təklif',
-    'hero.cardTop.title': 'Hərracın onlayn yayımı',
-    'hero.cardTop.desc': 'Hərracı özünüz izləyin',
+    'hero.cardTop.title': 'Daşınmanın sığortası',
+    'hero.cardTop.desc': 'Hərracdan Bakıya qədər əhatə',
     'hero.cardBottom.title': '5 pulsuz Carfax hesabatı',
     'hero.cardBottom.desc': 'Hər müştəriyə hədiyyə',
 
@@ -193,19 +188,14 @@ var QA_TRANSLATIONS = {
     'about.eyebrow': 'Şirkət haqqında',
     'about.title': 'Müştərilər niyə Qafqaz Avtonu seçir',
     'about.desc': 'Biz ABŞ-ın ən böyük hərracları ilə birbaşa işləyirik və hər əməliyyatı şəxsən müşayiət edirik — lotun seçimindən avtomobilin Azərbaycanda qeydiyyata alınmasına qədər.',
-    'about.badge': 'illik təcrübə ABŞ-dan avtomobil alışı və çatdırılmasında',
     'about.cta': 'Ətraflı məlumat',
 
-    'featureList.1.title': 'Hərraclara birbaşa çıxış',
-    'featureList.1.desc': 'Copart və IAAI-də öz hesablarımızla, vasitəçisiz işləyirik.',
-    'featureList.2.title': 'Şəffaf komissiya',
-    'featureList.2.desc': 'Xidmət haqqı əvvəlcədən müəyyən edilir, gizli ödəniş yoxdur.',
-    'featureList.3.title': 'Hər mərhələdə nəzarət',
-    'featureList.3.desc': 'Əməliyyatın statusu haqqında hesabat veririk, foto və çatdırılma izləməsini göndəririk.',
-    'featureList.4.title': 'Gömrükdə dəstək',
-    'featureList.4.desc': 'Avtomobili əlinizə alana qədər rəsmiləşdirmədə müşayiət edirik.',
-    'featureList.5.title': 'Hədiyyə olaraq quru təmizləmə və brendli nömrə çərçivəsi',
-    'featureList.5.desc': 'Avtomobili Bakıda təhvil alarkən — salonun pulsuz quru təmizlənməsi və Qafqaz Avto brendli nömrə çərçivəsi.',
+    'featureList.1.title': 'Doğru avto seçimində peşəkar ekspert dəstəyi',
+    'featureList.2.title': 'Seçilmiş avtonun alışdan öncə sənədlərinin yoxlanışı',
+    'featureList.3.title': 'Hər müştəriyə 5 pulsuz Carfax hesabat',
+    'featureList.4.title': 'Hərrac dayanacağından Bakıya qədər tam sığortalı daşınma',
+    'featureList.5.title': 'Partnyorumuzdan PULSUZ kimyəvi təmizləmə',
+    'featureList.6.title': 'Brendləşdirilmiş xüsusi nömrə çərçivələri',
 
     'pricing.eyebrow': 'Tariflər',
     'pricing.title': 'Əməliyyat müşayiəti formatını seçin',
@@ -301,8 +291,8 @@ var QA_TRANSLATIONS = {
     'hero.stat1': 'years in business',
     'hero.stat2': 'cars delivered',
     'hero.stat3': 'winning bids',
-    'hero.cardTop.title': 'Live auction stream',
-    'hero.cardTop.desc': 'Watch the bidding yourself',
+    'hero.cardTop.title': 'End-to-end logistics insurance',
+    'hero.cardTop.desc': 'Covered from auction to Baku',
     'hero.cardBottom.title': '5 free Carfax reports',
     'hero.cardBottom.desc': 'A gift for every client',
 
@@ -329,19 +319,14 @@ var QA_TRANSLATIONS = {
     'about.eyebrow': 'About us',
     'about.title': 'Why clients choose Qafqaz Avto',
     'about.desc': 'We work directly with the largest US auctions and personally manage every deal — from choosing the lot to registering the car in Azerbaijan.',
-    'about.badge': 'years of experience sourcing cars from the US',
     'about.cta': 'Learn more',
 
-    'featureList.1.title': 'Direct auction access',
-    'featureList.1.desc': 'We work without middlemen, through our own Copart and IAAI accounts.',
-    'featureList.2.title': 'Transparent fees',
-    'featureList.2.desc': 'Our fees are fixed upfront, with no hidden charges.',
-    'featureList.3.title': 'Control at every step',
-    'featureList.3.desc': 'We report on deal status and send photos and shipment tracking.',
-    'featureList.4.title': 'Customs support',
-    'featureList.4.desc': 'We support you through clearance until the car is in your hands.',
-    'featureList.5.title': 'Free detailing & a branded license plate frame',
-    'featureList.5.desc': "When you pick up your car in Baku — a free interior detailing and a Qafqaz Avto branded license plate frame.",
+    'featureList.1.title': 'Professional expert support in choosing the right car',
+    'featureList.2.title': "Document check of the selected car before purchase",
+    'featureList.3.title': '5 free Carfax reports for every client',
+    'featureList.4.title': 'Fully insured shipping from the auction lot to Baku',
+    'featureList.5.title': 'FREE dry cleaning from our partner',
+    'featureList.6.title': 'Branded custom license plate frames',
 
     'pricing.eyebrow': 'Pricing',
     'pricing.title': 'Choose your level of support',
@@ -438,11 +423,13 @@ var QA_TRANSLATIONS = {
       var path = '/' + lang;
       if (window.location.pathname !== path) {
         var newUrl = path + window.location.search + window.location.hash;
-        if (opts && opts.replace) {
-          window.history.replaceState({ lang: lang }, '', newUrl);
-        } else {
-          window.history.pushState({ lang: lang }, '', newUrl);
-        }
+        try {
+          if (opts && opts.replace) {
+            window.history.replaceState({ lang: lang }, '', newUrl);
+          } else {
+            window.history.pushState({ lang: lang }, '', newUrl);
+          }
+        } catch (e) { /* pushState is blocked on file:// and some sandboxed origins */ }
       }
     }
 
